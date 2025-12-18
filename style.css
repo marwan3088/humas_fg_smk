@@ -185,3 +185,38 @@ body {
         gap: 20px;
     }
 }
+
+
+/* tambahan css */
+
+.event-wrapper {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.event-card-header h2 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.drive-embed-container {
+    margin: 20px 0;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden; /* Agar sudut iframe melengkung */
+}
+
+.full-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.full-link:hover {
+    text-decoration: underline;
+}

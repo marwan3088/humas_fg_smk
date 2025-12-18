@@ -273,4 +273,5 @@ body {
 .event-purple { background: linear-gradient(45deg, #8e44ad, #9b59b6); }
 .event-orange { background: linear-gradient(45deg, #d35400, #e67e22); }
 .event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
-.event-red { background: linear-gradient(45deg, #c0392b, #e74c3c); }
+.event-red    { background: linear-gradient(45deg, #c0392b, #e74c3c); }
+

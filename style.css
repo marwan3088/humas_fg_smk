@@ -318,19 +318,20 @@ body {
 
 
 
-/* Styling Khusus YouTube Card */
+/* Menyamakan YouTube Wrapper dengan IG Wrapper */
 .yt-embed-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Rasio standar video landscape */
     margin-top: 15px;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Standar YouTube */
+    border-radius: 8px;
     background: #000;
     border: 1px solid #333;
-    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
 }
 
+/* Memastikan Iframe memenuhi kotak */
 .yt-embed-wrapper iframe {
     position: absolute;
     top: 0;
@@ -340,16 +341,23 @@ body {
     border: none;
 }
 
-/* Efek Hover: Border berubah jadi Cyan sesuai variabel --primary-color */
+/* Efek Hover sesuai CSS utama Anda */
 .yt-card:hover .yt-embed-wrapper {
     border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+}
+
+/* Custom Scrollbar (jika nanti Anda menambah teks panjang di dalam kartu) */
+.yt-card .card-content::-webkit-scrollbar {
+    width: 5px;
+}
+.yt-card .card-content::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
 }
 
 /* Warna icon YouTube (Merah) */
 .event-red {
     background: linear-gradient(45deg, #c0392b, #e74c3c);
 }
-
 
 

@@ -317,3 +317,39 @@ body {
 }
 
 
+
+/* Styling Khusus YouTube Card */
+.yt-embed-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Rasio standar video landscape */
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.yt-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Efek Hover: Border berubah jadi Cyan sesuai variabel --primary-color */
+.yt-card:hover .yt-embed-wrapper {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+}
+
+/* Warna icon YouTube (Merah) */
+.event-red {
+    background: linear-gradient(45deg, #c0392b, #e74c3c);
+}
+
+
+

@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-:root {
+.root {
     /* Palet Warna Dark Mode */
     --primary-color: #00bcd4;     /* Cyan/Biru Muda Tenang (Aksen) */
     --background-main: #1e1e1e;   /* Latar Belakang Sangat Gelap */
@@ -17,7 +17,7 @@
     --shadow-dark: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bayangan kuat untuk kontras */
 }
 
-body {
+.body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-main);
     color: var(--text-light);

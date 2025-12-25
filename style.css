@@ -405,5 +405,18 @@ body {
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
 }
 
+.tiktok-embed-wrapper {
+    position: relative;
+    width: 100%;
+    /* Mengikuti bentuk layar HP (Vertikal) */
+    aspect-ratio: 9 / 16; 
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid #333;
+}
+
+
 
 

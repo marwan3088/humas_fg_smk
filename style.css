@@ -368,3 +368,42 @@ body {
 
 
 
+
+/* Warna Icon TikTok (Hitam/Dark) */
+.event-black {
+    background: linear-gradient(45deg, #000000, #333333);
+}
+
+/* Container Embed TikTok agar mirip IG Wrapper */
+.tiktok-embed-wrapper {
+    margin-top: 15px;
+    width: 100%;
+    max-height: 450px; /* Menjaga agar kartu tidak kepanjangan */
+    overflow-y: auto;
+    border-radius: 12px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+}
+
+/* Custom Scrollbar untuk TikTok Wrapper */
+.tiktok-embed-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+.tiktok-embed-wrapper::-webkit-scrollbar-track {
+    background: var(--background-card);
+}
+.tiktok-embed-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Efek Hover Card TikTok */
+.tiktok-card:hover .tiktok-embed-wrapper {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+}
+
+
+

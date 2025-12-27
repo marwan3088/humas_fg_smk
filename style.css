@@ -279,6 +279,7 @@ body {
 .event-red    { background: linear-gradient(45deg, #c0392b, #e74c3c); }
 .event-hero { background: linear-gradient(45deg, #b22222, #ff4d4d); }
 .event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
+.event-honda { background: linear-gradient(45deg, #c0392b, #ff4d4d); }
 
 
 
@@ -471,6 +472,7 @@ body {
 .header-action-area {
     animation: fadeInSlide 1s ease forwards;
 }
+
 
 
 

@@ -42,7 +42,7 @@
 
 
   <!-- hari sumpah pemudah 2025 -->
-             <div onclick="bukaLocker('https://drive.google.com/drive/folders/1INi-GRNDLN7LH3f2KjXKQp3wjaXnjQoH')" class="event-card" style="cursor: pointer;">
+            <div onclick="bukaLocker('https://drive.google.com/drive/folders/1INi-GRNDLN7LH3f2KjXKQp3wjaXnjQoH')" class="event-card" style="cursor: pointer;">
     <div class="card-icon-container event-hero">
         <i class="fas fa-fist-raised"></i>
     </div>
@@ -283,122 +283,63 @@
 
 
 <!--bloker card   -->
-  <div id="ig-locker" style="display: none;">
-    <div class="card-locker">
-        <div class="icon-camera"><i class="fas fa-camera-retro"></i></div>
-        <h2>Verifikasi Follower 🔒</h2>
-        <p>Silakan follow Instagram <b>@humassmkn1stabat</b> untuk melihat galeri ini.</p>
-        
-        <a href="https://www.instagram.com/humassmkn1stabat/" target="_blank" class="btn-follow-ig" onclick="statusFollow()">
-            1. KLIK UNTUK FOLLOW
-        </a>
-
-        <div class="input-group-ig">
-            <label>2. Masukkan Username IG Kamu:</label>
-            <input type="text" id="igUser" class="input-user-ig" placeholder="@username_kamu">
-        </div>
-        
-        <button class="btn-verify-ig" onclick="verifikasiSekarang()">VERIFIKASI & BUKA</button>
-        
-        <div id="status-text-ig" class="loading-text-ig"></div>
-    </div>
-</div>
-
-<script>
-    let linkTujuan = ""; 
-
-    function bukaLocker(url) {
-        // Jika sudah pernah verifikasi, langsung buka
-        if (localStorage.getItem("ig_verified") === "true") {
-            window.open(url, "_blank");
-            return;
-        }
-        
-        // Jika belum, simpan link dan munculkan locker
-        linkTujuan = url;
-        const locker = document.getElementById("ig-locker");
-        if(locker) {
-            locker.style.display = "flex";
-            document.body.style.overflow = "hidden";
-        }
-    }
-
-    function statusFollow() {
-        document.getElementById("status-text-ig").innerText = "Selesaikan follow, lalu klik verifikasi.";
-    }
-
-    function verifikasiSekarang() {
-        const inputUser = document.getElementById("igUser").value;
-        const status = document.getElementById("status-text-ig");
-
-        if (inputUser.length < 3) {
-            status.style.color = "#e74c3c";
-            status.innerText = "Masukkan username IG yang valid!";
-            return;
-        }
-
-        status.style.color = "#00bcd4";
-        status.innerText = "Mengecek Database Follower...";
-
-        setTimeout(() => {
-            localStorage.setItem("ig_verified", "true");
-            document.getElementById("ig-locker").style.display = "none";
-            document.body.style.overflow = "auto";
-            if(linkTujuan !== "") {
-                window.open(linkTujuan, "_blank");
-            }
-        }, 2500);
-    }
-</script>
 <div id="ig-locker">
     <div class="card-locker">
-        <i class="fas fa-camera-retro" style="font-size: 3rem; color: var(--primary-color);"></i>
+        <i class="fas fa-camera-retro" style="font-size: 3.5em; color: var(--primary-color);"></i>
         <h2 style="margin: 15px 0;">Akses Terkunci 🔒</h2>
-        <p style="color: var(--text-secondary);">Follow Instagram <b>@humassmkn1stabat</b> untuk membuka akses galeri.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">Follow Instagram <b>@humassmkn1stabat</b> untuk melihat galeri.</p>
         
-        <a href="https://www.instagram.com/humassmkn1stabat/" target="_blank" class="btn-follow-ig" onclick="document.getElementById('status-text-ig').innerText='Selesaikan follow, lalu verifikasi.'">
+        <a href="https://www.instagram.com/humassmkn1stabat/" target="_blank" class="btn-follow-ig" onclick="document.getElementById('status-text-ig').innerText='Silakan verifikasi setelah follow.'">
             1. KLIK UNTUK FOLLOW
         </a>
 
         <input type="text" id="igUser" class="input-user-ig" placeholder="@username_kamu">
         
-        <button class="btn-verify-ig" onclick="prosesVerifikasi()">VERIFIKASI & BUKA</button>
+        <button class="btn-verify-ig" onclick="eksekusiVerifikasi()">VERIFIKASI & BUKA</button>
         
         <div id="status-text-ig" style="margin-top:15px; font-size: 0.8rem; color: var(--primary-color);"></div>
     </div>
 </div>
 
 <script>
-    let savedUrl = "";
+    var currentTargetUrl = "";
 
     function bukaLocker(url) {
-        // Cek jika sudah verifikasi sebelumnya
-        if (localStorage.getItem("isFollowed") === "true") {
-            window.location.href = url; // Pakai location.href agar lebih stabil
-            return;
+        // Cek localStorage agar tidak mengunci terus-menerus
+        if (localStorage.getItem("is_humas_follower") === "true") {
+            window.open(url, '_blank');
+        } else {
+            currentTargetUrl = url;
+            // Munculkan locker
+            document.getElementById("ig-locker").style.setProperty('display', 'flex', 'important');
+            // Matikan scroll body agar user fokus pada locker
+            document.body.style.overflow = "hidden";
         }
-        
-        savedUrl = url;
-        document.getElementById("ig-locker").style.display = "flex";
-        document.body.style.overflow = "hidden";
     }
 
-    function prosesVerifikasi() {
-        const username = document.getElementById("igUser").value;
-        const status = document.getElementById("status-text-ig");
+    function eksekusiVerifikasi() {
+        var userVal = document.getElementById("igUser").value;
+        var statusMsg = document.getElementById("status-text-ig");
 
-        if (username.length < 3) {
-            status.innerHTML = "<span style='color: #e74c3c;'>Masukkan username yang benar!</span>";
+        if (userVal.length < 3) {
+            statusMsg.style.color = "#ff4d4d";
+            statusMsg.innerText = "Masukkan username Instagram Anda!";
             return;
         }
 
-        status.innerText = "Memverifikasi data...";
+        statusMsg.style.color = "var(--primary-color)";
+        statusMsg.innerText = "Memverifikasi...";
 
-        setTimeout(() => {
-            localStorage.setItem("isFollowed", "true");
+        setTimeout(function() {
+            // Simpan status di browser
+            localStorage.setItem("is_humas_follower", "true");
+            
+            // Sembunyikan locker & aktifkan kembali scroll
             document.getElementById("ig-locker").style.display = "none";
             document.body.style.overflow = "auto";
-            window.open(savedUrl, "_blank"); // Buka galeri di tab baru
+            
+            // Buka link galeri yang disimpan
+            window.open(currentTargetUrl, '_blank');
         }, 2000);
     }
 </script>
@@ -406,6 +347,7 @@
 </body>
 
 </html>
+
 
 
 

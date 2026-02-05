@@ -42,7 +42,7 @@
 
 
   <!-- hari sumpah pemudah 2025 -->
-                <a href="https://drive.google.com/drive/folders/1INi-GRNDLN7LH3f2KjXKQp3wjaXnjQoH" target="_blank" class="event-card">
+                <a href="href="javascript:void(0)" onclick="bukaLocker('https://drive.google.com/drive/folders/1INi-GRNDLN7LH3f2KjXKQp3wjaXnjQoH')" target="_blank" class="event-card">
             <div class="card-icon-container event-hero">
                 <i class="fas fa-fist-raised"></i>
             </div>
@@ -281,10 +281,72 @@
         <p>Dibuat dengan <i class="fas fa-heart"></i> oleh Humas SMKN 1 Stabat &copy; 2025</p>
     </footer>
 
-    
+
+
+    <div id="ig-locker">
+    <div class="card-locker">
+        <div class="icon-camera"><i class="fas fa-camera-retro"></i></div>
+        <h2>Verifikasi Follower 🔒</h2>
+        <p>Silakan follow Instagram <b>@humassmkn1stabat</b> untuk membuka akses galeri ini.</p>
+        
+        <a href="https://www.instagram.com/humassmkn1stabat?igsh=MXhld3U3bGtncHFubA==" target="_blank" class="btn-follow-ig" onclick="statusFollow()">
+            1. KLIK UNTUK FOLLOW
+        </a>
+
+        <div class="input-group-ig">
+            <label>2. Masukkan Username IG Kamu:</label>
+            <input type="text" id="igUser" class="input-user-ig" placeholder="@username_kamu">
+        </div>
+        
+        <button class="btn-verify-ig" onclick="verifikasiSekarang()">VERIFIKASI & BUKA</button>
+        
+        <div id="status-text-ig" class="loading-text-ig"></div>
+    </div>
+</div>
+
+<script>
+    let targetLink = ""; 
+
+    function bukaLocker(link) {
+        // Cek status verifikasi di browser
+        if (localStorage.getItem("ig_verified") === "true") {
+            window.open(link, "_blank");
+        } else {
+            targetLink = link; 
+            document.getElementById("ig-locker").style.display = "flex";
+            document.body.style.overflow = "hidden"; // Matikan scroll saat terkunci
+        }
+    }
+
+    function statusFollow() {
+        document.getElementById("status-text-ig").innerText = "Selesaikan follow, lalu klik verifikasi.";
+    }
+
+    function verifikasiSekarang() {
+        const user = document.getElementById("igUser").value;
+        const status = document.getElementById("status-text-ig");
+
+        if (user.length < 3) {
+            status.style.color = "#e74c3c";
+            status.innerText = "Masukkan username IG yang valid!";
+            return;
+        }
+
+        status.style.color = "#00bcd4";
+        status.innerText = "Mengecek Database Follower...";
+
+        setTimeout(() => {
+            localStorage.setItem("ig_verified", "true");
+            document.getElementById("ig-locker").style.display = "none";
+            document.body.style.overflow = "auto";
+            window.open(targetLink, "_blank");
+        }, 2500);
+    }
+</script>
 </body>
 
 </html>
+
 
 
 

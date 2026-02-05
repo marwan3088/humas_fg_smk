@@ -42,7 +42,7 @@
 
 
   <!-- hari sumpah pemudah 2025 -->
-               <a href="javascript:void(0)" onclick="bukaLocker('https://drive.google.com/drive/folders/1INi-GRNDLN7LH3f2KjXKQp3wjaXnjQoH')" class="card-action">
+               <a href="javascript:void(0)" onclick="bukaLocker('https://drive.google.com/drive/folders/1INi-GRNDLN7LH3f2KjXKQp3wjaXnjQoH')" class="event-card">
             <div class="card-icon-container event-hero">
                 <i class="fas fa-arrow-right"></i>
             </div>
@@ -282,14 +282,14 @@
     </footer>
 
 
-
-    <div id="ig-locker">
+<!--bloker card   -->
+  <div id="ig-locker" style="display: none;">
     <div class="card-locker">
         <div class="icon-camera"><i class="fas fa-camera-retro"></i></div>
         <h2>Verifikasi Follower 🔒</h2>
-        <p>Silakan follow Instagram <b>@humassmkn1stabat</b> untuk membuka akses galeri ini.</p>
+        <p>Silakan follow Instagram <b>@humassmkn1stabat</b> untuk melihat galeri ini.</p>
         
-        <a href="https://www.instagram.com/humassmkn1stabat?igsh=MXhld3U3bGtncHFubA==" target="_blank" class="btn-follow-ig" onclick="statusFollow()">
+        <a href="https://www.instagram.com/humassmkn1stabat/" target="_blank" class="btn-follow-ig" onclick="statusFollow()">
             1. KLIK UNTUK FOLLOW
         </a>
 
@@ -305,16 +305,21 @@
 </div>
 
 <script>
-    let targetLink = ""; 
+    let linkTujuan = ""; 
 
-    function bukaLocker(link) {
-        // Cek status verifikasi di browser
+    function bukaLocker(url) {
+        // Jika sudah pernah verifikasi, langsung buka
         if (localStorage.getItem("ig_verified") === "true") {
-            window.open(link, "_blank");
-        } else {
-            targetLink = link; 
-            document.getElementById("ig-locker").style.display = "flex";
-            document.body.style.overflow = "hidden"; // Matikan scroll saat terkunci
+            window.open(url, "_blank");
+            return;
+        }
+        
+        // Jika belum, simpan link dan munculkan locker
+        linkTujuan = url;
+        const locker = document.getElementById("ig-locker");
+        if(locker) {
+            locker.style.display = "flex";
+            document.body.style.overflow = "hidden";
         }
     }
 
@@ -323,10 +328,10 @@
     }
 
     function verifikasiSekarang() {
-        const user = document.getElementById("igUser").value;
+        const inputUser = document.getElementById("igUser").value;
         const status = document.getElementById("status-text-ig");
 
-        if (user.length < 3) {
+        if (inputUser.length < 3) {
             status.style.color = "#e74c3c";
             status.innerText = "Masukkan username IG yang valid!";
             return;
@@ -339,13 +344,16 @@
             localStorage.setItem("ig_verified", "true");
             document.getElementById("ig-locker").style.display = "none";
             document.body.style.overflow = "auto";
-            window.open(targetLink, "_blank");
+            if(linkTujuan !== "") {
+                window.open(linkTujuan, "_blank");
+            }
         }, 2500);
     }
 </script>
 </body>
 
 </html>
+
 
 
 

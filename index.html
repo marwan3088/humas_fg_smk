@@ -350,9 +350,63 @@
         }, 2500);
     }
 </script>
+<div id="ig-locker">
+    <div class="card-locker">
+        <i class="fas fa-camera-retro" style="font-size: 3rem; color: var(--primary-color);"></i>
+        <h2 style="margin: 15px 0;">Akses Terkunci 🔒</h2>
+        <p style="color: var(--text-secondary);">Follow Instagram <b>@humassmkn1stabat</b> untuk membuka akses galeri.</p>
+        
+        <a href="https://www.instagram.com/humassmkn1stabat/" target="_blank" class="btn-follow-ig" onclick="document.getElementById('status-text-ig').innerText='Selesaikan follow, lalu verifikasi.'">
+            1. KLIK UNTUK FOLLOW
+        </a>
+
+        <input type="text" id="igUser" class="input-user-ig" placeholder="@username_kamu">
+        
+        <button class="btn-verify-ig" onclick="prosesVerifikasi()">VERIFIKASI & BUKA</button>
+        
+        <div id="status-text-ig" style="margin-top:15px; font-size: 0.8rem; color: var(--primary-color);"></div>
+    </div>
+</div>
+
+<script>
+    let savedUrl = "";
+
+    function bukaLocker(url) {
+        // Cek jika sudah verifikasi sebelumnya
+        if (localStorage.getItem("isFollowed") === "true") {
+            window.location.href = url; // Pakai location.href agar lebih stabil
+            return;
+        }
+        
+        savedUrl = url;
+        document.getElementById("ig-locker").style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
+
+    function prosesVerifikasi() {
+        const username = document.getElementById("igUser").value;
+        const status = document.getElementById("status-text-ig");
+
+        if (username.length < 3) {
+            status.innerHTML = "<span style='color: #e74c3c;'>Masukkan username yang benar!</span>";
+            return;
+        }
+
+        status.innerText = "Memverifikasi data...";
+
+        setTimeout(() => {
+            localStorage.setItem("isFollowed", "true");
+            document.getElementById("ig-locker").style.display = "none";
+            document.body.style.overflow = "auto";
+            window.open(savedUrl, "_blank"); // Buka galeri di tab baru
+        }, 2000);
+    }
+</script>
+    
 </body>
 
 </html>
+
 
 
 

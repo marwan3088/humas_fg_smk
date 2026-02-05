@@ -480,86 +480,24 @@ body {
 #ig-locker {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(18, 18, 18, 0.98);
-    backdrop-filter: blur(12px);
-    z-index: 100000; /* Pastikan lebih tinggi dari header */
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.card-locker {
-    background: #1e1e1e;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 380px;
-    width: 100%;
-    border: 2px solid #00bcd4;
-    box-shadow: 0 0 30px rgba(0, 188, 212, 0.3);
-}
-
-.btn-follow-ig {
-    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    display: block;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.input-user-ig {
-    width: 100%;
-    padding: 12px;
-    background: #121212;
-    border: 1px solid #333;
-    color: #fff;
-    border-radius: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-}
-
-.btn-verify-ig {
-    width: 100%;
-    padding: 12px;
-    background: #00bcd4;
-    color: #121212;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.loading-text-ig {
-    margin-top: 15px;
-    font-size: 0.85rem;
-    min-height: 20px;
-}
-#ig-locker {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(18, 18, 18, 0.98); /* Matching background-main */
-    backdrop-filter: blur(12px);
-    z-index: 999999;
-    display: none; /* Sembunyi default */
+    backdrop-filter: blur(15px);
+    z-index: 2000000; /* Angka sangat tinggi agar tidak tertutup header */
+    display: none; 
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
 .card-locker {
-    background: var(--background-card); /* Pakai variabel CSS kamu */
+    background: var(--background-card);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
     max-width: 400px;
     width: 100%;
-    border: 2px solid var(--primary-color); /* Cyan */
-    box-shadow: var(--shadow-dark); /* */
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow-dark);
 }
 
 .btn-follow-ig {
@@ -576,7 +514,7 @@ body {
 .input-user-ig {
     width: 100%;
     padding: 12px;
-    background: #121212;
+    background: var(--background-main);
     border: 1px solid #333;
     color: #fff;
     border-radius: 8px;

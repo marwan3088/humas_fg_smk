@@ -281,6 +281,7 @@ body {
 .event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
 .event-honda { background: linear-gradient(45deg, #c0392b, #ff4d4d); }
 .event-pink { background: linear-gradient(45deg, #d81b60, #f06292); }
+.event-green { background: linear-gradient(45deg, #1b5e20, #4caf50); }
 
 
 
@@ -532,3 +533,4 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+

@@ -16,6 +16,23 @@
     --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+
+/*icon card*/
+.event-purple { background: linear-gradient(45deg, #8e44ad, #9b59b6); }
+.event-orange { background: linear-gradient(45deg, #d35400, #e67e22); }
+.event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
+.event-red    { background: linear-gradient(45deg, #c0392b, #e74c3c); }
+.event-hero { background: linear-gradient(45deg, #b22222, #ff4d4d); }
+.event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
+.event-honda { background: linear-gradient(45deg, #c0392b, #ff4d4d); }
+.event-pink { background: linear-gradient(45deg, #d81b60, #f06292); }
+.event-green { background: linear-gradient(45deg, #1b5e20, #4caf50); }
+.event-graduation { background: linear-gradient(45deg, #2c3e50, #34495e); }
+.event-market { background: linear-gradient(45deg, #27ae60, #1abc9c); }
+.event-upgrading { background: linear-gradient(45deg, #2980b9, #00b4db); }
+
+
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-main);
@@ -270,21 +287,7 @@ body {
 }
 
 
-
-
-/*icon card*/
-.event-purple { background: linear-gradient(45deg, #8e44ad, #9b59b6); }
-.event-orange { background: linear-gradient(45deg, #d35400, #e67e22); }
-.event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
-.event-red    { background: linear-gradient(45deg, #c0392b, #e74c3c); }
-.event-hero { background: linear-gradient(45deg, #b22222, #ff4d4d); }
-.event-teal { background: linear-gradient(45deg, #009688, #4db6ac); }
-.event-honda { background: linear-gradient(45deg, #c0392b, #ff4d4d); }
-.event-pink { background: linear-gradient(45deg, #d81b60, #f06292); }
-.event-green { background: linear-gradient(45deg, #1b5e20, #4caf50); }
-.event-graduation { background: linear-gradient(45deg, #2c3e50, #34495e); }
-.event-market { background: linear-gradient(45deg, #27ae60, #1abc9c); }
-.event-upgrading { background: linear-gradient(45deg, #2980b9, #00b4db); }
+/* icon disini yang lama  */
 
 
 

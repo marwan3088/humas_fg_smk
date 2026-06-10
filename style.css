@@ -539,3 +539,43 @@ body {
     cursor: pointer;
 }
 
+
+/* =================================== */
+/* VISITOR COUNTER STYLE */
+/* =================================== */
+
+/* Memastikan susunan tombol dan counter vertikal ke bawah */
+.action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Jarak antara tombol dan jumlah pengunjung */
+}
+
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(30, 30, 30, 0.6); /* Transparan gelap menyesuaikan card */
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 188, 212, 0.2); /* Border cyan tipis */
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+}
+
+/* Mengatur icon user di depan tulisan pengunjung */
+.visitor-counter i {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+/* Mengatur tampilan gambar angka counter */
+.visitor-counter img {
+    height: 18px; /* Menyesuaikan tinggi teks agar sejajar */
+    display: inline-block;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 2px rgba(0, 188, 212, 0.3)); /* Efek glowing tipis */
+}
